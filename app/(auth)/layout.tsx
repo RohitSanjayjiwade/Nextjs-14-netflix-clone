@@ -22,6 +22,7 @@ export default function AuthLayout({ children }
 			alt="Logo" 
 			width={120}
 			height={120}
+			priority
 			className="absolute left-4 top-4 object-contain md:left-10 md:top-6 "/>
 			{children}
 		</div>
