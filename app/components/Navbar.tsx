@@ -6,6 +6,7 @@ import Link from "next/link";
 import Logo from "../../public/netflix_logo.svg"
 import { usePathname } from "next/navigation";
 import { Bell, Search } from "lucide-react";
+import UserNav from "./UserNav";
 
 interface linkProps {
 	name: string;
@@ -53,6 +54,8 @@ export default function Navbar() {
 
 				<Bell className="h-5 w-5 text-gray-300 cursor-pointer" />
 				
+				<UserNav />
+
 			</div>
 			
 		</div>
