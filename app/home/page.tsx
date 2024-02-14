@@ -1,13 +1,11 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "../utils/auth";
-import Navbar from "../components/Navbar";
+import MovieVideo from "../components/MovieVideo";
 
 export default async function HomePage() {
-	const session = await getServerSession(authOptions);
+	
 	return (
-		<>
-		
-		<Navbar />
-		</>
+		<div className="p-5 lg:p-0">
+			<MovieVideo />
+
+		</div>
 	);
 }
