@@ -25,7 +25,7 @@ model Account {
   id_token           String?  @db.Text
   session_state      String?
 
-  refresh_token_expires_in int?
+  refresh_token_expires_in Int?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -48,6 +48,31 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+}
+
+
+model Movie {
+  id            Int         @id
+  imageString   String
+  title         String
+  age           Int
+  duration      Float
+  overview      String
+  release       Int
+  videoSource   String
+  category      String
+  youtubeString String
+  WatchLists    WatchList[]
+
+  createdAt DateTime @default(now())
+}
+
+model WatchList {
+  id     String @id @default(uuid())
+  userId String
+
+  Movie   Movie? @relation(fields: [movieId], references: [id])
+  movieId Int?
 }
 
 model VerificationToken {
